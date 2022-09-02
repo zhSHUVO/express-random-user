@@ -5,13 +5,21 @@ module.exports.getRandomUser = (req, res) => {
 };
 
 module.exports.getAllUser = (req, res) => {
+    const { limit } = req.query;
     const userdata = fs.readFileSync('random.json');
     const user = JSON.parse(userdata);
-    res.send(user);
+    res.send(user.slice(0, limit));
 };
 
 module.exports.addRandomUser = (req, res) => {
-    res.send('random user added');
+    const userdata = fs.readFileSync('random.json');
+    const user = JSON.parse(userdata);
+    const newUser = req.body;
+    user.push(newUser);
+    const newUserList = JSON.stringify(user);
+    fs.writeFileSync('random.json', newUserList);
+    console.log(newUser);
+    res.send(newUserList);
 };
 
 module.exports.updateRandomUser = (req, res) => {

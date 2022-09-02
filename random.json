@@ -1,8 +1,26 @@
-{
-    "id": 23,
-    "gender": "female",
-    "name": "sara",
-    "contact": "+8976",
-    "address": "florida",
-    "photoUrl": "https://picsum.photos/200/300"
-}
+[
+    {
+        "id": 23,
+        "gender": "female",
+        "name": "sara",
+        "contact": "+8976",
+        "address": "florida",
+        "photoUrl": "https://picsum.photos/200/300"
+    },
+    {
+        "id": 23,
+        "gender": "female",
+        "name": "sara",
+        "contact": "+8976",
+        "address": "florida",
+        "photoUrl": "https://picsum.photos/200/300"
+    },
+    {
+        "id": 24,
+        "gender": "female",
+        "name": "aria",
+        "contact": "+8476",
+        "address": "winterfell",
+        "photoUrl": "https://picsum.photos/200/300"
+    }
+]
