@@ -26,7 +26,11 @@ module.exports.updateRandomUser = (req, res) => {
     const { id } = req.params;
     const newData = user.find((singleUser) => singleUser.id === Number(id));
     console.log(newData);
+    newData.gender = req.body.gender;
     newData.name = req.body.name;
+    newData.contact = req.body.contact;
+    newData.address = req.body.address;
+    newData.photoUrl = req.body.photoUrl;
     const newUserList = JSON.stringify(user);
     fs.writeFileSync('random.json', newUserList);
     res.send(user);
