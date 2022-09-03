@@ -26,18 +26,51 @@ module.exports.updateRandomUser = (req, res) => {
     const { id } = req.params;
     const newData = user.find((singleUser) => singleUser.id === Number(id));
     console.log(newData);
-    newData.gender = req.body.gender;
-    newData.name = req.body.name;
-    newData.contact = req.body.contact;
-    newData.address = req.body.address;
-    newData.photoUrl = req.body.photoUrl;
+    if (req.body.gender !== undefined) {
+        newData.gender = req.body.gender;
+    }
+    if (req.body.name !== undefined) {
+        newData.name = req.body.name;
+    }
+    if (req.body.contact !== undefined) {
+        newData.contact = req.body.contact;
+    }
+    if (req.body.address !== undefined) {
+        newData.address = req.body.address;
+    }
+    if (req.body.photoUrl !== undefined) {
+        newData.photoUrl = req.body.photoUrl;
+    }
     const newUserList = JSON.stringify(user);
     fs.writeFileSync('random.json', newUserList);
     res.send(user);
 };
 
 module.exports.multiUserUpdate = (req, res) => {
-    res.send('multiple users info updated');
+    const bodyData = req.body;
+    bodyData.forEach((data) => {
+        const { id } = data;
+        const newData = user.find((singleUser) => singleUser.id === id);
+        if (data.gender !== undefined) {
+            newData.gender = data.gender;
+        }
+        if (data.name !== undefined) {
+            newData.name = data.name;
+        }
+        if (data.contact !== undefined) {
+            newData.contact = data.contact;
+        }
+        if (data.address !== undefined) {
+            newData.address = data.address;
+        }
+        if (data.photoUrl !== undefined) {
+            newData.photoUrl = data.photoUrl;
+        }
+        console.log(newData);
+        const newUserList = JSON.stringify(user);
+        fs.writeFileSync('random.json', newUserList);
+    });
+    res.send(user);
 };
 
 module.exports.deleteRandomUser = (req, res) => {

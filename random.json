@@ -10,7 +10,7 @@
     {
         "id": 13,
         "gender": "female",
-        "name": "Dristy",
+        "name": "dipannita",
         "contact": "+8976",
         "address": "florida",
         "photoUrl": "https://picsum.photos/200/300"
@@ -19,7 +19,15 @@
         "id": 24,
         "gender": "female",
         "name": "aria",
-        "contact": "+8476",
+        "contact": "87678",
+        "address": "winterfell",
+        "photoUrl": "https://picsum.photos/200/300"
+    },
+    {
+        "id": 49,
+        "gender": "male",
+        "name": "johnny dep",
+        "contact": "87678",
         "address": "winterfell",
         "photoUrl": "https://picsum.photos/200/300"
     }
