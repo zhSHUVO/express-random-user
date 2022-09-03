@@ -9,7 +9,7 @@ router.route('/all').get(usersController.getAllUser);
 
 router.route('/save').post(usersController.addRandomUser);
 
-router.route('/update').patch(usersController.updateRandomUser);
+router.route('/update/:id').patch(usersController.updateRandomUser);
 
 router.route('/bulk-update').patch(usersController.multiUserUpdate);
 
