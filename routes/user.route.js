@@ -13,6 +13,6 @@ router.route('/update/:id').patch(usersController.updateRandomUser);
 
 router.route('/bulk-update').patch(usersController.multiUserUpdate);
 
-router.route('/delete').delete(usersController.deleteRandomUser);
+router.route('/delete/:id').delete(usersController.deleteRandomUser);
 
 module.exports = router;

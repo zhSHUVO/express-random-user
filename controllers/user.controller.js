@@ -37,5 +37,8 @@ module.exports.multiUserUpdate = (req, res) => {
 };
 
 module.exports.deleteRandomUser = (req, res) => {
-    res.send('random user deleted');
+    const { id } = req.params;
+    const newData = user.filter((singleUser) => singleUser.id !== Number(id));
+    fs.writeFileSync('random.json', JSON.stringify(newData));
+    res.send(newData);
 };
